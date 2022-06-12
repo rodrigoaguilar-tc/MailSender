@@ -1,6 +1,7 @@
 package com.aguilar.mailsender.controller;
 
 import com.aguilar.mailsender.controller.dto.SimpleMsgRequestDTO;
+import com.aguilar.mailsender.controller.dto.SimpleMsgResponseDTO;
 import com.aguilar.mailsender.service.MailService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +19,8 @@ public class MailController {
   @Autowired
   MailService mailService;
 
-  @PostMapping("/plainHTML")
-  public ResponseEntity<Boolean> sendMail(@RequestBody SimpleMsgRequestDTO simpleMsgRequestDTO) {
-    mailService.sendSimpleMessage(simpleMsgRequestDTO);
-    return new ResponseEntity<>(Boolean.TRUE, HttpStatus.OK);
+  @PostMapping("/simpleMail")
+  public ResponseEntity<SimpleMsgResponseDTO> sendMail(@RequestBody SimpleMsgRequestDTO simpleMsgRequestDTO) {
+    return new ResponseEntity<>(mailService.sendSimpleMessage(simpleMsgRequestDTO), HttpStatus.OK);
   }
 }
