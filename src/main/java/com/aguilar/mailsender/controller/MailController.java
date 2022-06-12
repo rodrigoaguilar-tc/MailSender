@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/sendMail")
-public class mailController {
+public class MailController {
 
   @Autowired
   MailService mailService;
