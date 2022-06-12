@@ -1,7 +1,7 @@
 package com.aguilar.mailsender.controller;
 
-import com.aguilar.mailsender.controller.dto.SimpleMsgRequestDTO;
-import com.aguilar.mailsender.controller.dto.SimpleMsgResponseDTO;
+import com.aguilar.mailsender.model.dto.SimpleMsgRequestDTO;
+import com.aguilar.mailsender.model.dto.SimpleMsgResponseDTO;
 import com.aguilar.mailsender.service.MailService;
 
 import org.springframework.beans.factory.annotation.Autowired;

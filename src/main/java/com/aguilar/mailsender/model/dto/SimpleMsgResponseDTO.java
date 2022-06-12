@@ -1,4 +1,4 @@
-package com.aguilar.mailsender.controller.dto;
+package com.aguilar.mailsender.model.dto;
 
 import lombok.Builder;
 import lombok.Data;
