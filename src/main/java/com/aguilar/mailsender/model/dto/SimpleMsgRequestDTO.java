@@ -1,6 +1,9 @@
 package com.aguilar.mailsender.model.dto;
 
 import lombok.Data;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -15,4 +18,6 @@ public class SimpleMsgRequestDTO {
 
   @NotBlank
   private String mailBody;
+
+  private List<String> base64AttachFiles;
 }

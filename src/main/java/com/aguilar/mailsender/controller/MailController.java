@@ -25,4 +25,5 @@ public class MailController {
   public ResponseEntity<SimpleMsgResponseDTO> sendMail(@Valid @RequestBody SimpleMsgRequestDTO simpleMsgRequestDTO) {
     return new ResponseEntity<>(mailService.sendSimpleMessage(simpleMsgRequestDTO), HttpStatus.OK);
   }
+
 }
