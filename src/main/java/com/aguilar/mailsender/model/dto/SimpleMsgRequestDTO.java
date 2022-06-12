@@ -1,7 +1,6 @@
 package com.aguilar.mailsender.model.dto;
 
 import lombok.Data;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 

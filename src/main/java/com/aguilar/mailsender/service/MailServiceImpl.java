@@ -1,21 +1,18 @@
 package com.aguilar.mailsender.service;
 
 import com.aguilar.mailsender.exception.AttachFileException;
+import com.aguilar.mailsender.exception.SendMailException;
 import com.aguilar.mailsender.helper.MimeTypeHelper;
 import com.aguilar.mailsender.model.dto.SimpleMsgRequestDTO;
 import com.aguilar.mailsender.model.dto.SimpleMsgResponseDTO;
-import com.aguilar.mailsender.exception.SendMailException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.MailException;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
 import java.util.Base64;
 import java.util.Objects;
 
@@ -57,7 +54,7 @@ public class MailServiceImpl implements MailService {
     helper.setSubject(simpleMsgRequestDTO.getMailsSubject());
     helper.setText(simpleMsgRequestDTO.getMailBody());
 
-    if(Objects.nonNull(simpleMsgRequestDTO.getBase64AttachFiles())) {
+    if (Objects.nonNull(simpleMsgRequestDTO.getBase64AttachFiles())) {
       simpleMsgRequestDTO.getBase64AttachFiles().forEach(attach -> {
         byte[] file = Base64.getDecoder().decode(attach);
         try {
