@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/sendMail")
 public class MailController {
@@ -20,7 +22,7 @@ public class MailController {
   MailService mailService;
 
   @PostMapping("/simpleMail")
-  public ResponseEntity<SimpleMsgResponseDTO> sendMail(@RequestBody SimpleMsgRequestDTO simpleMsgRequestDTO) {
+  public ResponseEntity<SimpleMsgResponseDTO> sendMail(@Valid @RequestBody SimpleMsgRequestDTO simpleMsgRequestDTO) {
     return new ResponseEntity<>(mailService.sendSimpleMessage(simpleMsgRequestDTO), HttpStatus.OK);
   }
 }
