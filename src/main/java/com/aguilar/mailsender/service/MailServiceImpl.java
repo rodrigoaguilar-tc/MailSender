@@ -52,7 +52,7 @@ public class MailServiceImpl implements MailService {
 
     helper.setTo(simpleMsgRequestDTO.getMailTo());
     helper.setSubject(simpleMsgRequestDTO.getMailsSubject());
-    helper.setText(simpleMsgRequestDTO.getMailBody());
+    helper.setText(simpleMsgRequestDTO.getMailBody(), Boolean.TRUE);
 
     if (Objects.nonNull(simpleMsgRequestDTO.getBase64AttachFiles())) {
       simpleMsgRequestDTO.getBase64AttachFiles().forEach(attach -> {
